@@ -18,4 +18,8 @@ public interface DepartmentService {
 
 	public String saveListOfDepartment(List<Department> departments);
 
+	public Department findByDepartmentName(String dName);
+
+	public Department findByDepartmentId(Long id);
+
 }

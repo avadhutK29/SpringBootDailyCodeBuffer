@@ -36,32 +36,43 @@ public class DepartmentServiceImpl implements DepartmentService {
 		repository.deleteById(departmentId);
 		return "Delete Successfull!!!";
 	}
+
 	/**
 	 * method to update the department by ID
 	 */
 	public Department updateDepartment(Long departmentId, Department department) {
-		Department dbDepartment =  repository.findById(departmentId).get(); 
-		
-		if(null != department) {
-			
-			if(!ObjectUtils.isEmpty(department.getDepartmentName()) && Objects.nonNull(department.getDepartmentName()))
+		Department dbDepartment = repository.findById(departmentId).get();
+
+		if (null != department) {
+
+			if (!ObjectUtils.isEmpty(department.getDepartmentName()) && Objects.nonNull(department.getDepartmentName()))
 				dbDepartment.setDepartmentName(department.getDepartmentName());
-			
-			if(!ObjectUtils.isEmpty(department.getDepartmentCode()) && Objects.nonNull(department.getDepartmentCode()))
+
+			if (!ObjectUtils.isEmpty(department.getDepartmentCode()) && Objects.nonNull(department.getDepartmentCode()))
 				dbDepartment.setDepartmentCode(department.getDepartmentCode());
-			
-			if(!ObjectUtils.isEmpty(department.getDepartmentAddress()) && Objects.nonNull(department.getDepartmentAddress()))
+
+			if (!ObjectUtils.isEmpty(department.getDepartmentAddress())
+					&& Objects.nonNull(department.getDepartmentAddress()))
 				dbDepartment.setDepartmentAddress(department.getDepartmentAddress());
-			
+
 			repository.save(dbDepartment);
 		}
 		return dbDepartment;
 	}
-	
+
 	public String saveListOfDepartment(List<Department> departments) {
-		
+
 		repository.saveAll(departments);
-		
+
 		return "Successful!!";
 	}
+
+	public Department findByDepartmentName(String dName) {
+		return repository.findByDepartmentName(dName);
+	}
+
+	public Department findByDepartmentId(Long id) {
+		return repository.findByDepartmentId(id);
+	}
+
 }
