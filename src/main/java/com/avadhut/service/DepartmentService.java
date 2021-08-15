@@ -3,7 +3,10 @@ package com.avadhut.service;
 import java.util.List;
 
 import com.avadhut.entity.Department;
-
+/**
+ * @author AVADHUT KUMBHAR
+ *
+ */
 public interface DepartmentService {
 
 	public Department saveDepartment(Department department);

@@ -5,7 +5,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.avadhut.entity.Department;
-
+/**
+ * @author AVADHUT KUMBHAR
+ *
+ */
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long>{
 	

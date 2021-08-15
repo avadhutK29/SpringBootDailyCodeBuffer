@@ -2,6 +2,8 @@ package com.avadhut.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.avadhut.entity.Department;
 import com.avadhut.repository.DepartmentRepository;
 import com.avadhut.service.DepartmentService;
-
+/**
+ * @author AVADHUT KUMBHAR
+ *
+ */
 @RestController
 public class DepartmentController {
 
@@ -26,7 +31,7 @@ public class DepartmentController {
 	private DepartmentRepository depRepo;
 
 	@PostMapping("saveDepartment")
-	public Department saveDepartment(@RequestBody Department department) {
+	public Department saveDepartment(@Valid @RequestBody Department department) {
 		return departmentService.saveDepartment(department);
 	}
 
