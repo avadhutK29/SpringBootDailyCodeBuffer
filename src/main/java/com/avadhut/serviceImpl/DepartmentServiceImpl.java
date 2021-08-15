@@ -75,4 +75,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 		return repository.findByDepartmentId(id);
 	}
 
+	public Department getDemartmentByNameUsingNativeQuery(String name) {
+		return repository.getDemartmentByNameUsingNativeQuery(name);
+	}
 }

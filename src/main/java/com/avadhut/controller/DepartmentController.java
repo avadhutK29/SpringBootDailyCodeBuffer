@@ -72,4 +72,13 @@ public class DepartmentController {
 		return departmentService.findByDepartmentId(id);
 	}
 
+	/**
+	 * Method to demonstrate @Query Annotation to use native SQL
+	 * @param name
+	 * @return Department
+	 */
+	@GetMapping("getDemartmentByNameUsingNativeQuery/{name}")
+	public Department getDemartmentByNameUsingNativeQuery(@PathVariable String name) {
+		return departmentService.getDemartmentByNameUsingNativeQuery(name);
+	}
 }

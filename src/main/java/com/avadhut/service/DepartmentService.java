@@ -22,4 +22,6 @@ public interface DepartmentService {
 
 	public Department findByDepartmentId(Long id);
 
+	public Department getDemartmentByNameUsingNativeQuery(String name);
+
 }
